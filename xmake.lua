@@ -24,7 +24,9 @@ on_config(function(target)
             target:add("files", filepath)            
         end
     end
+    if is_plat("windows") then
+        target:add("links", "ws2_32")
+    end
 end)
 add_files("reproc++/src/reproc.cpp")
-add_links("ws2_32")
 target_end()
