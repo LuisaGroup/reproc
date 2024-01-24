@@ -7,7 +7,7 @@ add_headerfiles("reproc++/include/**.hpp")
 add_includedirs("reproc/include/", "reproc++/include/", {
     public = true
 })
-add_rules("c++", "c")
+add_rules("c++.build", "c.build")
 on_config(function(target)
     local src_path = path.join(os.scriptdir(), "reproc/src")
     local keyword
