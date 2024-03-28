@@ -1,6 +1,6 @@
 target("reproc")
 _config_project({
-    project_kind = "shared"
+    project_kind = "static"
 })
 add_headerfiles("reproc/include/**.h")
 add_headerfiles("reproc++/include/**.hpp")
@@ -25,7 +25,7 @@ on_config(function(target)
         end
     end
     if is_plat("windows") then
-        target:add("links", "ws2_32")
+        target:add("links", "ws2_32", {public = true})
     end
 end)
 add_files("reproc++/src/reproc.cpp")
